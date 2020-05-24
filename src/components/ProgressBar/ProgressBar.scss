@@ -1,0 +1,26 @@
+$progressHeight: 20px;
+$progressUpperShadow: rgba(255, 255, 255, 0.9);
+$progressLowerShadow: rgba(0, 0, 0, 0.9);
+$progressColor: rgb(43, 194, 83);
+$backgroundColor: #555;
+
+.meter {
+  height: $progressHeight;
+  position: relative;
+  background: $backgroundColor;
+  border-radius: 25px;
+  padding: 5px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: 25px;
+    background-color: $progressColor;
+    box-shadow: inset 0 2px 9px $progressUpperShadow,
+      inset 0 -2px 6px $progressLowerShadow;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.4s ease-in-out;
+  }
+}

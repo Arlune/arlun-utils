@@ -1,0 +1,14 @@
+.alert-queue-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 10px;
+  height: 100%;
+
+  &.top {
+    flex-direction: column;
+  }
+  &.bottom {
+    flex-direction: column-reverse;
+  }
+}
