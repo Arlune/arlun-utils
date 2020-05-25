@@ -1,8 +1,10 @@
+$containerRightPosition: 10px;
+
 .alert-queue-container {
   display: flex;
   flex-direction: column;
   position: fixed;
-  right: 10px;
+  right: $containerRightPosition;
   height: 100%;
 
   &.top {

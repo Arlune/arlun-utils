@@ -36,7 +36,7 @@ storiesOf('AlertQueue', module).add('showcase bottom', () => {
         onClick={() => childRef.current.addSuccesAlert()}
         style={{ ...buttonStyle, backgroundColor: 'green' }}
       >
-        Add Succes Alert
+        Add Success Alert
       </button>
       <button
         onClick={() => childRef.current.addInfoAlert()}
@@ -82,7 +82,7 @@ storiesOf('AlertQueue', module).add('showcase top', () => {
         onClick={() => childRef.current.addSuccesAlert()}
         style={{ ...buttonStyle, backgroundColor: 'green' }}
       >
-        Add Succes Alert
+        Add Success Alert
       </button>
       <button
         onClick={() => childRef.current.addInfoAlert()}

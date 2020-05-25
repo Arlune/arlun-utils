@@ -20,7 +20,6 @@ $toastFadeOutDuration: 1s;
   border-radius: $toastBorderRadius;
   color: $toastFontColor;
   width: $toastWidth;
-  transition: all 1s ease-in-out;
 
   &.error {
     background-color: $toastColorError;

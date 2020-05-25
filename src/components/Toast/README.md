@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to use AlertQueue ?
 
-## Available Scripts
+- First of all, import the AlertQueue file :  
+  `import AlertQueue from '../components/Toast'`
+- Then use the AlertQueue component whenever you want :  
+  `<AlertQueue/>`  
+  In this component, you can change few things :
+  - Which side you want the toast list appear with `position="top"`or `position="bottom"`.  
+    _By default it'll be at the bottom side_
+  - If you want to show or hide the shine effect, this effect shows the life time of the toast add `shine="true"`or `shine="false"`  
+    _By default the shine effect is `true`_
+- Ex : `<AlertQueue position="top" shine="false"/>`
 
-In the project directory, you can run:
+In the AlertQueue file, you have few functions to launch different type of toast :
 
-### `npm start`
+- addWarningAlert
+- addErrorAlert
+- addSuccesAlert
+- addInfoAlert
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**NB :** you can change the text of each of these alert directly in the `AlertQueue.js` file, in the `const alerts` object
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+To call these functions in your main file, in **React** you have to :</br>
 
-### `npm test`
+- `import { useRef } from 'react'` in the top of your file</br>
+- `const constName = useRef()` create a const equal to the useRef</br>
+- In the return, you have to call the ref in the AlertQueue component :</br> `<AlertQueue ref={constName} />`</br>
+- For example, in a button, you have to call the function you want (here the `addErrorAlert()`) with the const you created.current before</br>
+  `<button onClick={() => constName.current.addErrorAlert()} >`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Modify style
 
-### `npm run build`
+If you want to change the container style, in `AlertQueue.sccs` you have :
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- containerRightPosition
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+If you want to change the style of these toast, go to the `Toast.scss` file, you have few parameters available like :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- toastWidth
+- toastVerticalPosition
+- toastPositionRight
+- toastColorError
+- toastColorWarning
+- toastColorSuccess
+- toastColorInfo
+- toastFontColor
+- toastBorderRadius
+- toastPadding
+- toastDuration
+- toastFadeInDuration
+- toastFadeOutDuration

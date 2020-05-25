@@ -9,6 +9,13 @@ const AlertQueue = forwardRef(
     const alertQueueRef = useRef(alertQueue)
     alertQueueRef.current = alertQueue
 
+    const alerts = {
+      warning: { type: 'warning', text: 'Warning !!' },
+      error: { type: 'error', text: 'Error' },
+      success: { type: 'success', text: 'Congratulations :)' },
+      info: { type: 'info', text: 'Did you know ?...' }
+    }
+
     const toastList = alertQueue.map((toast) => (
       <Toast
         type={toast.type}
@@ -23,16 +30,16 @@ const AlertQueue = forwardRef(
 
     useImperativeHandle(ref, () => ({
       addWarningAlert() {
-        createAlert('warning', 'Warning !!')
+        createAlert(alerts.warning.type, alerts.warning.text)
       },
       addErrorAlert() {
-        createAlert('error', 'Error')
+        createAlert(alerts.error.type, alerts.error.text)
       },
       addSuccesAlert() {
-        createAlert('success', 'Congratulations :)')
+        createAlert(alerts.success.type, alerts.success.text)
       },
       addInfoAlert() {
-        createAlert('info', 'Did you know ?...')
+        createAlert(alerts.info.type, alerts.info.text)
       }
     }))
 
