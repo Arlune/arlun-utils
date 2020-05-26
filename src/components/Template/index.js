@@ -1,3 +1,3 @@
-import ProgressBar from './Template'
+import Template from './Template'
 
-export default ProgressBar
+export default Template

@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react'
+import './Template.scss'
 
-function ProgressBar() {
-  return <div>a</div>;
+function Template() {
+  return <div>a</div>
 }
 
-export default ProgressBar;
+export default Template
