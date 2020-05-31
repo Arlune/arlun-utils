@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ProgressBar from '../components/ProgressBar'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, number } from '@storybook/addon-knobs'
+import { withKnobs, number } from '@storybook/addon-knobs'
 
 storiesOf('ProgressBar', module).add('showcase', () => (
   <div style={{ width: '50%', margin: 'auto', paddingTop: '15px' }}>
-    <ProgressBar width='100' />
+    <ProgressBar width='100' colorStyle="primary-color"/>
+    <div>with primary-color</div>
     <br />
-    <ProgressBar width='80' />
+    <ProgressBar width='80' colorStyle="secondary-color" />
+    <div>with secondary-color</div>
     <br />
-    <ProgressBar />
+    <ProgressBar colorStyle="tertiary-color" />
+    <div>with tertiary-color</div>
     <br />
-    <ProgressBar width='30' />
-    <br />
-    <ProgressBar width='0' />
+    <ProgressBar width='30' colorStyle="contrast-color"/>
+    <div>with contrast-color</div>
   </div>
 ))
 
@@ -29,7 +31,7 @@ storiesOf('ProgressBar', module)
   .add('Knobs', () => {
     return (
       <div style={{ width: '50%', margin: 'auto', paddingTop: '15px' }}>
-        <ProgressBar width={number('width', 30, options)}></ProgressBar>
+        <ProgressBar width={number('width', 30, options)} colorStyle="primary-color"></ProgressBar>
         <div
           style={{
             paddingTop: '10px',

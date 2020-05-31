@@ -1,9 +1,9 @@
 import React from 'react'
 import './ProgressBar.scss'
 
-function ProgressBar({ width = '50' }) {
+function ProgressBar({ width = '50', colorStyle }) {
   return (
-    <div className='meter'>
+    <div className={`meter ${colorStyle}`}>
       <span style={{ width: `${width}%` }}></span>
     </div>
   )
