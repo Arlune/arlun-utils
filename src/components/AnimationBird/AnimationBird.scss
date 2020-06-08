@@ -1,0 +1,41 @@
+body {
+  background-color: black;
+}
+
+.container-bird {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  .animation {
+    background-size: auto 100%;
+    width: 110px;
+    height: 100px;
+    will-change: background-position;
+
+    animation-name: flap-cycle;
+    animation-timing-function: steps(8);
+    animation-iteration-count: infinite;
+    transition-timing-function: ease;
+
+    animation-duration: 0.8s;
+    animation-delay: -0.5s;
+
+    &.cotillons {
+      background-image: url(animation-cotillons.svg);
+    }
+    &.bird {
+      position: absolute;
+      content: url(bird.svg);
+      background-image: url(animation-frames-final.svg);
+    }
+  }
+}
+
+@keyframes flap-cycle {
+  100% {
+    background-position: -880px 0;
+  }
+}
